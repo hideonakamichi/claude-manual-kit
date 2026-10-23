@@ -1,0 +1,28 @@
+# Bounded Agent Loop 設定
+#
+# 生成→評価→改善ループの安全弁。各ループに以下を必ず定義する:
+#   1. goal           — 終了条件（どの状態に達したら抜けるか）
+#   2. max_iterations — 上限回数（達しなくても強制終了）
+#   3. on_exhaust     — 上限到達時の遷移先
+#
+# ここの上限を緩めると、失敗時に延々とリトライして Claude の利用枠だけが減っていく。
+# 司令塔（banner-manual-orchestrator）は、ここの上限を勝手に緩めない。
+
+loops:
+  banner_evaluation:
+    description: カルーセル全体の evaluator 合否判定ループ
+    goal: verdict == "pass"
+    max_iterations: 2
+    on_exhaust: abort_and_stop  # output/ に退避し、理由を画面に出して止まる
+
+  caption_evaluation:
+    description: キャプション/ハッシュタグの evaluator 合否判定ループ
+    goal: verdict == "pass"
+    max_iterations: 2
+    on_exhaust: abort_and_stop
+
+  carousel_slide_regeneration:
+    description: カルーセルの不合格スライド単位の描き直しループ（banner.py --only-slide）
+    goal: slide verdict == "pass"
+    max_iterations: 2
+    on_exhaust: abort_and_stop

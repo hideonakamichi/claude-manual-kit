@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python .claude/skills/banner-production/scripts/banner.py *)",
+      "Bash(python3 .claude/skills/banner-production/scripts/banner.py *)",
+      "Bash(python .claude/skills/banner-production/scripts/record_created.py *)",
+      "Bash(python3 .claude/skills/banner-production/scripts/record_created.py *)",
+      "Bash(python .claude/skills/shared/scripts/check_brand.py)",
+      "Bash(python .claude/skills/shared/scripts/check_brand.py *)",
+      "Bash(python3 .claude/skills/shared/scripts/check_brand.py)",
+      "Bash(python3 .claude/skills/shared/scripts/check_brand.py *)",
+      "Bash(python .claude/skills/shared/scripts/build_article_index.py)",
+      "Bash(python .claude/skills/shared/scripts/build_article_index.py *)",
+      "Bash(python3 .claude/skills/shared/scripts/build_article_index.py)",
+      "Bash(python3 .claude/skills/shared/scripts/build_article_index.py *)",
+      "Bash(mkdir -p output/*)"
+    ]
+  }
+}

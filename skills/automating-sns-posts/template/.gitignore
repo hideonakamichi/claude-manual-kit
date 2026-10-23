@@ -1,0 +1,35 @@
+# 環境変数（APIキー等）
+.env
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Python 仮想環境
+.venv/
+venv/
+env/
+
+# node（あれば）
+node_modules/
+
+# 生成物（画像・キャプション）は output/ 配下に集約し、リポジトリには積まない
+output/*/
+!output/.gitkeep
+
+# 実行ログ
+logs/*.jsonl
+
+# 記事索引の更新成否（build_article_index.py が毎回書く内部状態）
+logs/article_index_state.json
+
+# ロックファイル（/tmp想定だが念のため）
+*.lock
+
+# 実行時の状態（ロックなど）
+logs/locks/
+logs/article_index_state.json
