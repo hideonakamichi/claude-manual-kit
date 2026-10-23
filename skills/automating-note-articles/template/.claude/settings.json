@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "Write(./work/**)",
+      "Edit(./work/**)",
+      "Agent(media-writer)",
+      "Agent(media-reviewer)",
+      "Bash(python scripts/*)"
+    ],
+    "deny": [
+      "Read(./.env.local)",
+      "Bash(cat *)",
+      "Bash(type *)",
+      "Bash(curl *)",
+      "Bash(rm *)"
+    ]
+  }
+}

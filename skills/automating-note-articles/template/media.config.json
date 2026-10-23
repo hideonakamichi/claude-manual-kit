@@ -1,0 +1,55 @@
+{
+  "_説明": "案件ごとに変わる値はこのファイルだけに書く。スクリプトと3人の手順書はここを読む。（）の値は全部埋める",
+  "_kit": "note 記事キット",
+
+  "media_name": "（メディア名。例: 〇〇社 note）",
+  "company": "（会社の正式名）",
+  "platform": "note",
+  "note_user": "（note のアカウント名。note.com/ のあと）",
+  "site_url": "",
+
+  "reader": "（読者。例: 料理好きの一般のお客さん）",
+  "goal": "（記事で起こしたいこと。例: 〇〇って面白いと感じてもらい、商品ページへ案内する）",
+  "tone": "（例: 売り込みではなく、使い方を教えてくれるお店の人の記事）",
+
+  "styles": ["dialogue"],
+  "article_style": "dialogue",
+  "_article_style": "テイストは記事ごと。編集長が styles（この案件で使ってよいもの・本人が④で選ぶ）の中から1本ずつすすめ、本人が採用のときに確かめる。article_style は既定（テイストが空の記事）。dialogue＝2人の対話／interview＝インタビュー風／essay＝読み物／story＝ストーリー＋解説／howto＝ノウハウ・まとめ／documentary＝ドキュメンタリー・密着。interview と documentary は interview_file（本人の取材メモ）が要る",
+
+  "characters": {
+    "asker": { "name": "（質問役の名前。interview なら聞き手）", "role": "（例: 読者の代わりに素朴な疑問・驚き・確認をする）" },
+    "explainer": { "name": "（解説役の名前。interview なら話す人＝取材した実在の人）", "role": "（例: 〇〇にくわしい会社のスタッフ。具体的に答える）" }
+  },
+  "_characters": "dialogue と interview だけで使う。地の文のテイストでは narrator を使う",
+  "narrator": "（地の文の書き手。例: 〇〇にくわしい会社のスタッフが、お客さんに語りかける）",
+  "interview_file": "facts/取材メモ.md",
+
+  "length": { "min": 3000, "max": 5000 },
+  "h2": { "min": 4, "max": 6 },
+  "exclamations": { "min": 5, "max": 20 },
+  "exclamations_prose": { "min": 0, "max": 5 },
+  "_exclamations": "exclamations＝対話・インタビューの「！」の回数／exclamations_prose＝地の文のテイストの回数",
+
+  "products": [
+    { "key": "（英小文字の短い名前）", "name": "（記事での呼び方）", "url": "（商品ページの URL）" }
+  ],
+
+  "facts_file": "facts/確かめた事実.md",
+  "trusted_sources": ["官公庁（go.jp・lg.jp）", "大学（ac.jp）", "（業界団体の名前とドメイン）", "（メーカーなど業界の公式）"],
+
+  "forbidden": {
+    "reason": "（例: 食品の広告で言えない（健康・効能）・確かめられない最上級）",
+    "words": ["日本一", "世界一", "唯一", "No.1", "ナンバーワン"]
+  },
+
+  "image_style": "（例: 白背景・フラット・線画。色は HP の主役色 #xxxxxx を主に、差し色を少し）",
+  "image_avoid": "（例: 水彩・写真風・グラデーション・影の強い立体）",
+  "image_reference": "（タッチの見本。HP の URL か見本画像のパス。無ければ空にする）",
+  "image_mode": "manual",
+  "_image_mode": "manual＝画像の指示文だけ作り、人が ChatGPT・Canva などで画像にする（無料）／gemini＝Gemini で自動（支払いの登録が要る）",
+
+  "mail_prefix": "[（短い名前）note]",
+  "d1_database": "（英小文字とハイフン。例: abc-note）",
+  "articles_per_run": 1,
+  "ideas_per_batch": 10
+}
